@@ -19,7 +19,7 @@ const theClockApp = () => {
   // Get current minutes
   let gotMinutes = timeNow.getMinutes();
   // Get current seconds
-  let gotSeconds = timeNow.getSeconds();
+  //let gotSeconds = timeNow.getSeconds();
   
   // Check-Check: Is the data correct? 
   // console.log(gotHours, gotMinutes, gotSeconds);
@@ -36,7 +36,7 @@ const theClockApp = () => {
   // Optionally, append zero to single digit minutes
   gotMinutes = gotMinutes < 10 ? `0${gotMinutes}` : gotMinutes;
   // Optionally, append zero to single digit seconds
-  gotSeconds = gotSeconds < 10 ? `0${gotSeconds}` : gotSeconds;
+  //gotSeconds = gotSeconds < 10 ? `0${gotSeconds}` : gotSeconds;
   
   /************
   Get DOM Elements
@@ -54,28 +54,28 @@ const theClockApp = () => {
   Set DOM Elements
   ************/
   // Set the hours
-  hours.textContent = gotHours;
+  hours.textContent = gotHours.toString();
   // Set the minutes
-  minutes.textContent = gotMinutes;
+  minutes.textContent = gotMinutes.toString();
   // Set the seconds
-  seconds.textContent = gotSeconds;
+  //seconds.textContent = gotSeconds.toString();
   // Set AM or PM
   amOrPM.textContent = gotAmOrPM;
-    
+
   }
   
   /************
   Run App
   ************/
-  // Re-run `theClockApp` every 1 second (1000 ms)
+  // Re-run `theClockApp` every 1 minute (1000 ms)
   setInterval(theClockApp, 1000);
 </script>
 
-<section class="time">
-    <h1>Time</h1>
+<section class="time bg-gray-300/50 p-3 rounded-lg shadow-md w-auto absolute top-0 left-1/2 transform -translate-x-1/2 text-6xl">
     <time>
-      <data class="hours">HH</data> : <data class="minutes">MM</data> :
-      <data class="seconds">SS</data>
+      <data class="hours">HH</data>
+      :
+      <data class="minutes">MM</data>
       <data class="amOrPM">AM/PM</data>
     </time>
 <section>
